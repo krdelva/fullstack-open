@@ -3,7 +3,7 @@ import Content from "./Content"
 import Total from "./Total"
 import Hello from "./Hello"
 
-const App = () => {
+const App = (props) => {
   const course = { 
     name: "Half Stack application development",
     parts: [
@@ -22,6 +22,8 @@ const App = () => {
     ]
   }
 
+  const {counter} = props
+
   const name = "Peter"
   const age = 20
   
@@ -34,6 +36,9 @@ const App = () => {
       <h1>Greetings</h1>
       <Hello name="Maya" age={26+10} />
       <Hello name={name} age={age} />
+
+      <h2>Counter:</h2>
+      <div>{counter}</div>
     </>
   );
 }
