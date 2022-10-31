@@ -3,6 +3,8 @@ import Content from "./Content"
 import Total from "./Total"
 import Hello from "./Hello"
 
+import { useState } from "react"
+
 const App = (props) => {
   const course = { 
     name: "Half Stack application development",
@@ -22,10 +24,10 @@ const App = (props) => {
     ]
   }
 
-  const {counter} = props
-
   const name = "Peter"
   const age = 20
+
+  const [ counter, setCounter ] = useState(0)
   
   return (
     <>
@@ -39,6 +41,8 @@ const App = (props) => {
 
       <h2>Counter:</h2>
       <div>{counter}</div>
+      <button onClick={() => setCounter(counter + 1)}>+</button>
+      <button onClick={() => setCounter(counter - 1)}>-</button>
     </>
   );
 }
