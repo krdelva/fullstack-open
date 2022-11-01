@@ -19,7 +19,7 @@ const App = (props) => {
       },
       { 
         name: "State of a component",
-        exercises: 14
+        exercises: 15
       }
     ]
   }
