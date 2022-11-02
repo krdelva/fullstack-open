@@ -1,10 +1,10 @@
-const Display = (props) => {
+const Display = ({ counter }) => {
 
 
     return (
         <>         
             <h1>Display</h1>
-            <p>Counter: {props.counter}</p>
+            <p>Counter: {counter}</p>
         </>
     )
 
