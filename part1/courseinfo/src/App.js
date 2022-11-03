@@ -26,8 +26,8 @@ const App = (props) => {
     ]
   }
 
-  const name = "Peter"
-  const age = 20
+  const [name, setName] = useState("Peter")
+  const [age, setAge] = useState(20)
 
   const [ counter, setCounter ] = useState(0)
 
