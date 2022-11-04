@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Character = ({player, handlePlayer}) => {
+const Character = ({player, setPlayer}) => {
     const [message, setMessage] = useState("");
 
     const [updated, setUpdated] = useState(message)
@@ -12,8 +12,7 @@ const Character = ({player, handlePlayer}) => {
     const handleClick = () => {
         // "message" stores input field value
         setUpdated(message);
-        console.log(message);
-        handlePlayer(message);
+        setPlayer({name: message});
     }
     
     return (

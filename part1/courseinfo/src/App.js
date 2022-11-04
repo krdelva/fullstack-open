@@ -38,10 +38,6 @@ const App = (props) => {
 
 
   const [player, setPlayer] = useState({name: "Temp", hp: 5, mp: 5, atk: 2, def: 2})
-
-  const handlePlayer = (name) => {
-    setPlayer(name);
-  }
   
   return (
     <>
@@ -64,7 +60,7 @@ const App = (props) => {
       <Button onClick={setZero} text="Reset" />
       <Button onClick={subtractOne} text="-" />
 
-      <Character player={player} handlePlayer={handlePlayer}/>
+      <Character player={player} setPlayer={setPlayer}/>
     </>
   );
 }
