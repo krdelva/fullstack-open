@@ -4,6 +4,7 @@ import Total from "./Total"
 import Hello from "./Hello"
 import Display from "./Display"
 import Button from "./Button"
+import Character from "./Character"
 
 import { useState } from "react"
 
@@ -34,6 +35,13 @@ const App = (props) => {
   const addOne = () => setCounter(counter + 1)
   const subtractOne = () => setCounter(counter - 1)
   const setZero = () => setCounter(0)
+
+
+  const [player, setPlayer] = useState({name: "Temp", hp: 5, mp: 5, atk: 2, def: 2})
+
+  const handlePlayer = (name) => {
+    setPlayer(name);
+  }
   
   return (
     <>
@@ -55,6 +63,8 @@ const App = (props) => {
       <Button onClick={addOne} text="+" />
       <Button onClick={setZero} text="Reset" />
       <Button onClick={subtractOne} text="-" />
+
+      <Character player={player} handlePlayer={handlePlayer}/>
     </>
   );
 }
