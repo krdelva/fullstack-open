@@ -31,10 +31,20 @@ const App = (props) => {
   const [age, setAge] = useState(20)
 
   const [ counter, setCounter ] = useState(0)
+  const [allClicks, setAll] = useState([])
 
-  const addOne = () => setCounter(counter + 1)
-  const subtractOne = () => setCounter(counter - 1)
-  const setZero = () => setCounter(0)
+  const addOne = () => {
+    setAll(allClicks.concat("+"))
+    setCounter(counter + 1)
+  }
+  const subtractOne = () => {
+    setAll(allClicks.concat("-"))
+    setCounter(counter - 1)
+  }
+  const setZero = () => {
+    setAll(allClicks.concat("r"))
+    setCounter(0)
+  }
 
 
   const [player, setPlayer] = useState({name: "Temp", hp: 5, mp: 5, atk: 2, def: 2})
@@ -55,10 +65,11 @@ const App = (props) => {
       <button onClick={setZero}>Reset</button>
       <button onClick={subtractOne}>-</button>
 
-      <Display counter={counter}/>
+      <Display counter={counter} allClicks={allClicks}/>
       <Button onClick={addOne} text="+" />
       <Button onClick={setZero} text="Reset" />
       <Button onClick={subtractOne} text="-" />
+      
 
       <Character player={player} setPlayer={setPlayer}/>
     </>
