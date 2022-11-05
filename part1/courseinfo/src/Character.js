@@ -12,7 +12,7 @@ const Character = ({player, setPlayer}) => {
     const handleClick = () => {
         // "message" stores input field value
         setUpdated(message);
-        setPlayer({name: message});
+        setPlayer({...player, name: message, atk: 10});
     }
     
     return (
