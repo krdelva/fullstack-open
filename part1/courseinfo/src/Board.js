@@ -43,6 +43,10 @@ const Board = () => {
 
     const inputChange = (e) => {
         console.log(e.target.value);
+        if (e.target.value > 100) {
+            setDimension(dimension)
+            return
+        }
         setDimension(e.target.value);
     }
 
