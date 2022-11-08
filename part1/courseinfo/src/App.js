@@ -5,8 +5,11 @@ import Hello from "./Hello"
 import Display from "./Display"
 import Button from "./Button"
 import Character from "./Character"
+import Board from "./Board"
 
 import { useState } from "react"
+
+import "./index.css"
 
 const App = (props) => {
   const course = { 
@@ -72,6 +75,7 @@ const App = (props) => {
       
 
       <Character player={player} setPlayer={setPlayer}/>
+      <Board />
     </>
   );
 }
