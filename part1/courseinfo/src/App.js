@@ -47,7 +47,7 @@ const App = (props) => {
   }
 
 
-  const [player, setPlayer] = useState({name: "Temp", hp: 5, mp: 5, atk: 2, def: 2})
+  const [player, setPlayer] = useState({name: "Set Name", points: 0, hp: 1, mp: 1, atk: 1, def: 1})
   
   return (
     <>
