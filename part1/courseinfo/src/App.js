@@ -6,6 +6,7 @@ import Display from "./Display"
 import Button from "./Button"
 import Character from "./Character"
 import Board from "./Board"
+import History from "./History"
 
 import { useState } from "react"
 
@@ -63,16 +64,14 @@ const App = (props) => {
       <Hello name={name} age={age} />
 
       <h2>Counter:</h2>
-      <div>{counter}</div>
-      <button onClick={addOne}>+</button>
-      <button onClick={setZero}>Reset</button>
-      <button onClick={subtractOne}>-</button>
 
       <Display counter={counter} allClicks={allClicks}/>
       <Button onClick={addOne} text="+" />
       <Button onClick={setZero} text="Reset" />
       <Button onClick={subtractOne} text="-" />
       
+      <History allClicks={allClicks} />
+
 
       <Character player={player} setPlayer={setPlayer}/>
       <Board />
