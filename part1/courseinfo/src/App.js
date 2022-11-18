@@ -39,6 +39,16 @@ const App = (props) => {
 
   const [statistics, setStatistics] = useState({good: 0, neutral: 0, bad: 0})
 
+  const addStat = (stat) => {
+    //setStatistics({...statistics, good: 1})
+    console.log("Add stat: ", stat, "Yeah? :", statistics)
+    stat === "good" ? setStatistics({...statistics, good: statistics.good + 1}) :
+    stat === "neutral" ? setStatistics({...statistics, neutral: statistics.neutral + 1}) :
+    stat === "bad" ? setStatistics({...statistics, bad: statistics.bad + 1}) :
+    console.log("What is this? : ", stat)
+  }
+
+
   const addOne = () => {
     setAll(allClicks.concat("+"))
     setCounter(counter + 1)
@@ -59,11 +69,13 @@ const App = (props) => {
     <>
 
       <Header text="Give Feedback" />
-      <Button onClick={() => console.log(("good"))} text="good" />
-      <Button onClick={() => console.log(("neutral"))} text="neutral" />
-      <Button onClick={() => console.log(("bad"))} text="bad" />
+      <Button onClick={() => addStat("good")} text="good" />
+      <Button onClick={() => addStat("neutral")} text="neutral" />
+      <Button onClick={() => addStat("bad")} text="bad" />
       <Header text="Statistics" />
-
+      <p>good: {statistics.good}</p>
+      <p>neutral: {statistics.neutral}</p>
+      <p>bad: {statistics.bad}</p>
 
       <Header text={course.name} />
       <Content parts={course.parts} />
