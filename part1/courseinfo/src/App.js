@@ -37,6 +37,8 @@ const App = (props) => {
   const [ counter, setCounter ] = useState(0)
   const [allClicks, setAll] = useState([])
 
+  const [statistics, setStatistics] = useState({good: 0, neutral: 0, bad: 0})
+
   const addOne = () => {
     setAll(allClicks.concat("+"))
     setCounter(counter + 1)
@@ -55,7 +57,15 @@ const App = (props) => {
   
   return (
     <>
-      <Header course={course.name} />
+
+      <Header text="Give Feedback" />
+      <Button onClick={() => console.log(("good"))} text="good" />
+      <Button onClick={() => console.log(("neutral"))} text="neutral" />
+      <Button onClick={() => console.log(("bad"))} text="bad" />
+      <Header text="Statistics" />
+
+
+      <Header text={course.name} />
       <Content parts={course.parts} />
       <Total parts={course.parts} />
 
