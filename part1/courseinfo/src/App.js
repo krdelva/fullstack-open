@@ -68,7 +68,7 @@ const App = (props) => {
   return (
     <>
 
-      <Header text="Give Feedback" />
+      <Header text="Provide Feedback" />
       <Button onClick={() => addStat("good")} text="good" />
       <Button onClick={() => addStat("neutral")} text="neutral" />
       <Button onClick={() => addStat("bad")} text="bad" />
